@@ -13,18 +13,19 @@ public class GridGenerate : MonoBehaviour
     {
         TotalPiece = GameObject.FindGameObjectsWithTag("Piece");
 
+        // GridBoard Generate :--
         for (int i = 0; i < 100; i++)
         {
             Instantiate(ImagePrefab, Space.transform);
         } 
 
+        // Piece Generate :--
         for(int i = 0; i < 3 ; i++)
         {
             Instantiate(Piece, PieceSpace.transform);
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
        /*if (TotalPiece.Length < 3 || TotalPiece.Length == null)

@@ -1,35 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Drag_And_Drop : MonoBehaviour
 {
-    Vector3 offset;
-    bool isDragging = false;
-    Transform Hello;
+    Piece_Script pickedObject = null;
+
+    void Start()
+    {
+       
+    }
 
     private void Update()
     {
         if(Input.GetMouseButtonDown(0))
         {
-            offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            isDragging = true;
+            Vector3 offset = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 MousePos2D = new Vector2(offset.x,offset.y);
+
+            var Hit = Physics2D.Raycast(MousePos2D, Vector2.zero);
+
+            if (Hit.collider != null)
+            {
+                if (Hit.transform.tag == "MainPiece")
+                {
+                    pickedObject = Hit.transform.gameObject.GetComponent<Piece_Script>();
+                }
+            }           
         }
         
         if(Input.GetMouseButton(0)) 
         {
-            if (isDragging)
+            if (pickedObject != null)
             {
-                Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
-                transform.position = new Vector3(newPosition.x, newPosition.y, transform.position.z);
+                Vector2 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                pickedObject.Move(newPosition.x, newPosition.y);
             }
         }
 
         if(Input.GetMouseButtonUp(0))
         {
-            isDragging = false;
+            pickedObject.MoveToOrignalPos();
+            pickedObject = null;
         }
     }
 }
