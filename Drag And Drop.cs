@@ -19,26 +19,30 @@ public class Drag_And_Drop : MonoBehaviour
             var Hit = Physics2D.Raycast(MousePos2D, Vector2.zero);
 
             if (Hit.collider != null)
-            {
+            {              
                 if (Hit.transform.tag == "MainPiece")
                 {
-                    pickedObject = Hit.transform.gameObject.GetComponent<Piece_Script>();
-                }
+                   pickedObject = Hit.transform.gameObject.GetComponent<Piece_Script>();
+                }              
             }           
         }
         
-        if(Input.GetMouseButton(0)) 
+        if(Input.GetMouseButton(0))
         {
             if (pickedObject != null)
             {
                 Vector2 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 pickedObject.Move(newPosition.x, newPosition.y);
+                              
             }
         }
 
         if(Input.GetMouseButtonUp(0))
         {
-            pickedObject.MoveToOrignalPos();
+            if (pickedObject != null)
+            {
+                pickedObject.MoveToOriginalPos();
+            }
             pickedObject = null;
         }
     }

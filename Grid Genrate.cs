@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GridGenerate : MonoBehaviour
@@ -28,9 +26,6 @@ public class GridGenerate : MonoBehaviour
 
     void Update()
     {
-       /*if (TotalPiece.Length < 3 || TotalPiece.Length == null)
-        {
-            Instantiate(Piece, PieceSpace.transform);
-        }*/
+
     }
 }
