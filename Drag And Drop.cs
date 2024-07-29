@@ -19,7 +19,7 @@ public class Drag_And_Drop : MonoBehaviour
             var Hit = Physics2D.Raycast(MousePos2D, Vector2.zero);
 
             if (Hit.collider != null)
-            {              
+            {
                 if (Hit.transform.tag == "MainPiece")
                 {
                    pickedObject = Hit.transform.gameObject.GetComponent<Piece_Script>();

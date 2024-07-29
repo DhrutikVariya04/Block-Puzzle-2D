@@ -2,26 +2,21 @@ using UnityEngine;
 
 public class GridGenerate : MonoBehaviour
 {
-    GameObject[] TotalPiece;
-
     [SerializeField]
-    GameObject Space, ImagePrefab, Piece, PieceSpace;
+    GameObject SpawnImage;
 
     void Start()
     {
-        TotalPiece = GameObject.FindGameObjectsWithTag("Piece");
-
-        // GridBoard Generate :--
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 10; i++)
         {
-            Instantiate(ImagePrefab, Space.transform);
-        } 
+            for (int j = 0; j < 10; j++)
+            {
+                var block = Instantiate(SpawnImage, new Vector2(i, j), Quaternion.identity);
+                block.transform.SetParent(transform, false);
 
-        // Piece Generate :--
-        for(int i = 0; i < 3 ; i++)
-        {
-            Instantiate(Piece, PieceSpace.transform);
+            }
         }
+
     }
 
     void Update()
