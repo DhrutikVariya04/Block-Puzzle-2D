@@ -20,9 +20,4 @@ public class Piece_Script : MonoBehaviour
     {
        startPosition  = transform.position;       
     }
-
-    void Update()
-    {
-        
-    }
 }

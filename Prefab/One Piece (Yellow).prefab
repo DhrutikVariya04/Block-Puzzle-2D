@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6839120853514617923}
   - component: {fileID: -1800343804792956831}
   m_Layer: 0
-  m_Name: One Piece
+  m_Name: One Piece (Yellow)
   m_TagString: MainPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

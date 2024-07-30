@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -167,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6742bc9536934441a0cdc4f88e2cbe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grid: {fileID: 909850175}
 --- !u!1 &266952970
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,7 +268,7 @@ Transform:
   m_GameObject: {fileID: 272812690}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -286,7 +286,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0edddc0127363ac408a799ebf940fc05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pieces: {fileID: 1305517221319814059, guid: 319e4479fe156664aa29305721816096, type: 3}
+  Pieces:
+  - {fileID: 1305517221319814059, guid: 319e4479fe156664aa29305721816096, type: 3}
+  - {fileID: 1305517221319814059, guid: f74a58580797fbc42bf418e89e5a8f55, type: 3}
+  - {fileID: 1305517221319814059, guid: 9cf4f1bf5bbce2448a955f0a59fddb3d, type: 3}
 --- !u!1 &480024246
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,6 +577,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnImage: {fileID: 3267922092038201994, guid: 40a8482dc3822fb46bf3397a72e8ebda, type: 3}
+  highlight: {r: 0.81960785, g: 1, b: 0.7607843, a: 1}
+  Sprite: {fileID: 0}
+  DefaultImage: {fileID: 1566078124, guid: 5a320b3e6655fa048bb3b6c83120a783, type: 3}
 --- !u!1 &1007072069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,5 +1368,5 @@ SceneRoots:
   - {fileID: 1469566899}
   - {fileID: 7553611}
   - {fileID: 909850174}
-  - {fileID: 1258463576}
   - {fileID: 272812691}
+  - {fileID: 1258463576}
