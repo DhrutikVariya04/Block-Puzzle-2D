@@ -6,6 +6,11 @@ public class Piece_Script : MonoBehaviour
 {
     Vector2 startPosition;
 
+    internal void LastPos(Vector2 Pos)
+    {
+        transform.position = new Vector3(Pos.x, Pos.y);
+    }
+
     internal void Move(float x, float y)
     {
         transform.position = new Vector2(x, y);
@@ -19,10 +24,5 @@ public class Piece_Script : MonoBehaviour
     void Start()
     {
        startPosition  = transform.position;       
-    }
-
-    void Update()
-    {
-        
     }
 }
