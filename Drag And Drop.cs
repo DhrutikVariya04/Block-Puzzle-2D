@@ -47,18 +47,7 @@ public class Drag_And_Drop : MonoBehaviour
         {
             if (pickedObject != null)
             {
-                /*Vector2 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                if (grid.inRange(newPosition))
-                {
-                    //pickedObject.CheckChild(grid.baseBlock, newPosition);
-                    pickedObject.placeBlock(newPosition);
-                    pickedObject.GetComponent<BoxCollider2D>().enabled = false;
-                }
-                else
-                {
-                    pickedObject.MoveToOriginalPos();
-                }*/
-                pickedObject.MoveToOriginalPos();
+                grid.Placeblock(pickedObject);
             }
 
             pickedObject = null;

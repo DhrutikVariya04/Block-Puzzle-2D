@@ -3,7 +3,6 @@ using UnityEngine;
 public class Piece_Script : MonoBehaviour
 {
     Vector2 startPosition;
-    public Vector2 pieceSize;
 
     internal void placeBlock(Vector2 Pos)
     {

@@ -30,34 +30,29 @@ public class GridGenerate : MonoBehaviour
 
     }
 
-    public void Highlight(Piece_Script pickedObject)
+    public void Highlight(Piece_Script mainPiece)
     {
         clearHighlight();
 
-        if (!isEmptyBase(pickedObject))
+        if (!isEmptyBase(mainPiece))
         {
             return;
         }
 
-        var Totalchild = pickedObject.transform.childCount;
+        var Totalchild = mainPiece.transform.childCount;
 
         for (int i = 0; i < Totalchild; i++)
         {
-            var piece = pickedObject.transform.GetChild(i).gameObject;
+            var piece = mainPiece.transform.GetChild(i).gameObject;
             Vector2Int piecePos = converToVector2Int(piece.transform.position);
 
             var block = baseBlock[piecePos.x, piecePos.y];
 
-            if (piece.transform.tag == "Piece")
-            {
-                block.GetComponent<SpriteRenderer>().sprite = piece.GetComponent<SpriteRenderer>().sprite;
-                block.transform.localScale = Vector3.one;
-            }
-
+            block.GetComponent<SpriteRenderer>().sprite = piece.GetComponent<SpriteRenderer>().sprite;
+            block.transform.localScale = Vector3.one;
         }
 
     }
-
 
     public void clearHighlight()
     {
@@ -81,20 +76,14 @@ public class GridGenerate : MonoBehaviour
     {
         var Totalchild = mainPiece.transform.childCount;
 
-        print("***********");
         for (int i = 0; i < Totalchild; i++)
         {
             var piece = mainPiece.transform.GetChild(i).gameObject;
             Vector2Int piecePos = converToVector2Int(piece.transform.position);
 
-            if (!inRangeBase(piecePos))
+            if (!inRange(piece.transform.position))
             {
-                print("false ===> " + piecePos);
                 return false;
-            }
-            else
-            {
-                print("true ===> " + piecePos);
             }
 
         }
@@ -107,9 +96,29 @@ public class GridGenerate : MonoBehaviour
             pos.x < size - .5 && pos.y < size - .5;
     }
 
-    public bool inRangeBase(Vector2 pos)
+    internal void Placeblock(Piece_Script mainPiece)
     {
-        return pos.x >= 0 && pos.y >= 0 &&
-            pos.x < size && pos.y < size;
+        Vector2 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (isEmptyBase(mainPiece))
+        {
+            var Totalchild = mainPiece.transform.childCount;
+
+            for (int i = 0; i < Totalchild; i++)
+            {
+                var piece = mainPiece.transform.GetChild(i).gameObject;
+                Vector2Int piecePos = converToVector2Int(piece.transform.position);
+
+                var block = baseBlock[piecePos.x, piecePos.y];
+
+                piece.transform.position = new Vector2(piecePos.x, piecePos.y);
+                block.transform.localScale = Vector3.one;
+
+            }
+            mainPiece.GetComponent<BoxCollider2D>().enabled = false;
+        }
+        else
+        {
+            mainPiece.MoveToOriginalPos();
+        }
     }
 }
