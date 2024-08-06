@@ -1,12 +1,11 @@
-using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Piece_Script : MonoBehaviour
 {
     Vector2 startPosition;
+    public Vector2 pieceSize;
 
-    internal void LastPos(Vector2 Pos)
+    internal void placeBlock(Vector2 Pos)
     {
         transform.position = new Vector3(Pos.x, Pos.y);
     }
@@ -21,8 +20,5 @@ public class Piece_Script : MonoBehaviour
         transform.position = startPosition;
     }
 
-    void Start()
-    {
-       startPosition  = transform.position;       
-    }
+    private void Start() => startPosition = transform.position;
 }

@@ -190,6 +190,216 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: common_ui_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 527
+        width: 626
+        height: 663
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e95bf3584d8d23046996bfed4dec56c3
+      internalID: 1034942936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_ui_3
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 221
+        width: 500
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7e363f51b994cc4e86dd08be8a5faae
+      internalID: 159533231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_ui_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 74
+        width: 442
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f31982a10b5bb4a88ec673f0b23ba2
+      internalID: 1310043275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_ui_5
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 78
+        width: 442
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ebd99d2f66668438865d5b847b5671
+      internalID: -1046655944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_ui_6
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 213
+        width: 442
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a1c8ce80fddc84381a587c1adb0779
+      internalID: -1229290447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_ui_7
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 717
+        width: 70
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 117cde6b128e6e5469760534d37aacc6
+      internalID: -744227025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_ui_8
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 1030
+        width: 128
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae452854a2f04e74fb626d240849266c
+      internalID: 931528619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_ui_9
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 950
+        width: 128
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b62877a496c1da34bac5e6a48ae94545
+      internalID: -1334525943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_ui_10
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 720
+        width: 63
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2012ba3fb3e4af048acbce719b05b520
+      internalID: -885096456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_ui_11
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 616
+        width: 65
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cbb5280ecbc0384492603aadf443dd3
+      internalID: 972945234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -203,6 +413,16 @@ TextureImporter:
     nameFileIdTable:
       common_ui_0: -1020956958
       common_ui_1: 2020733592
+      common_ui_10: -885096456
+      common_ui_11: 972945234
+      common_ui_2: 1034942936
+      common_ui_3: 159533231
+      common_ui_4: 1310043275
+      common_ui_5: -1046655944
+      common_ui_6: -1229290447
+      common_ui_7: -744227025
+      common_ui_8: 931528619
+      common_ui_9: -1334525943
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -5,8 +5,6 @@ public class Drag_And_Drop : MonoBehaviour
 {
     Piece_Script pickedObject = null;
     public GridGenerate grid;
-    Vector2Int pos;
-    bool PlaceCheck = false;
 
     private void Update()
     {
@@ -35,11 +33,7 @@ public class Drag_And_Drop : MonoBehaviour
 
                 if (grid.inRange(newPosition))
                 {
-                    pos = converToVector2Int(newPosition);
-                    grid.Highlight(pos);
-                    grid.Sprite = pickedObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite;
-                    PlaceCheck = true;
-                    //print("HEllos"+pickedObject.transform.GetChildCount());
+                    grid.Highlight(pickedObject);
                 }
                 else
                 {
@@ -53,14 +47,18 @@ public class Drag_And_Drop : MonoBehaviour
         {
             if (pickedObject != null)
             {
+                /*Vector2 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                if (grid.inRange(newPosition))
+                {
+                    //pickedObject.CheckChild(grid.baseBlock, newPosition);
+                    pickedObject.placeBlock(newPosition);
+                    pickedObject.GetComponent<BoxCollider2D>().enabled = false;
+                }
+                else
+                {
+                    pickedObject.MoveToOriginalPos();
+                }*/
                 pickedObject.MoveToOriginalPos();
-            }
-
-            if (pickedObject != null && PlaceCheck)
-            {
-                pickedObject.LastPos(pos);
-                PlaceCheck = false;
-                pickedObject.GetComponent<BoxCollider2D>().enabled = false;
             }
 
             pickedObject = null;
@@ -68,8 +66,4 @@ public class Drag_And_Drop : MonoBehaviour
         }
     }
 
-    private Vector2Int converToVector2Int(Vector2 pos)
-    {
-        return new Vector2Int((int)(pos.x + .5f), (int)(pos.y + .5f));
-    }
 }
