@@ -1,9 +1,11 @@
+
 using System;
 using UnityEngine;
 
 public class GridGenerate : MonoBehaviour
 {
-    public GameObject[,] baseBlock;
+    GameObject[,] baseBlock;
+    GameObject[,] fillBlock;
     int size = 10;
 
     [SerializeField]
@@ -17,6 +19,7 @@ public class GridGenerate : MonoBehaviour
     void Start()
     {
         baseBlock = new GameObject[size, size];
+        fillBlock= new GameObject[size, size];
 
         for (int i = 0; i < size; i++)
         {
@@ -50,6 +53,7 @@ public class GridGenerate : MonoBehaviour
 
             block.GetComponent<SpriteRenderer>().sprite = piece.GetComponent<SpriteRenderer>().sprite;
             block.transform.localScale = Vector3.one;
+            
         }
 
     }
@@ -81,7 +85,7 @@ public class GridGenerate : MonoBehaviour
             var piece = mainPiece.transform.GetChild(i).gameObject;
             Vector2Int piecePos = converToVector2Int(piece.transform.position);
 
-            if (!inRange(piece.transform.position))
+            if (!inRange(piece.transform.position) || fillBlock[piecePos.x, piecePos.y] != null)
             {
                 return false;
             }
@@ -112,8 +116,9 @@ public class GridGenerate : MonoBehaviour
 
                 piece.transform.position = new Vector2(piecePos.x, piecePos.y);
                 block.transform.localScale = Vector3.one;
-
+                fillBlock[piecePos.x, piecePos.y] = block;
             }
+
             mainPiece.GetComponent<BoxCollider2D>().enabled = false;
         }
         else

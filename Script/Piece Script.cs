@@ -19,5 +19,9 @@ public class Piece_Script : MonoBehaviour
         transform.position = startPosition;
     }
 
-    private void Start() => startPosition = transform.position;
+    private void Start()
+    {
+         startPosition = transform.position;
+    }
+
 }

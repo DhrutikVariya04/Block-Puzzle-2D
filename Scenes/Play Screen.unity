@@ -287,15 +287,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pieces:
-  - {fileID: 6292886969032856733, guid: dc10de3831a7b1c438ee08a6b4a39ad8, type: 3}
+  - {fileID: 5994704645413059349, guid: 18299d95cb53b1743be4d9654b2d9a4a, type: 3}
   - {fileID: 3632349582828154374, guid: 774ea40f165c8d24e8ffc1c25806074b, type: 3}
   - {fileID: 7378713710365314595, guid: dc755e6a5fca15a40a754c9ced690f7a, type: 3}
+  - {fileID: 5934717702480703820, guid: 7248306ba22f88d4fb4e4d9e76ca2577, type: 3}
+  - {fileID: 5934717702480703820, guid: b8b28c807f0bdbf41a1bfe4c9c4698c6, type: 3}
+  - {fileID: 5934717702480703820, guid: c94df038f4bcbdc42a4c2649b0e83653, type: 3}
+  - {fileID: 5934717702480703820, guid: ee2e8487d603b4e47b42fa12cb704602, type: 3}
+  - {fileID: 5934717702480703820, guid: 892b1ae9279f03348acf43a507b7aa9f, type: 3}
+  - {fileID: 5934717702480703820, guid: 947931230a8a1524fa1bcd05bfae6e83, type: 3}
+  - {fileID: 5934717702480703820, guid: 17a7fb9d04a7f3c48b6eda703b3aec68, type: 3}
+  - {fileID: 5934717702480703820, guid: f802c2a9af4f308498ef1bcfd6161b0d, type: 3}
+  - {fileID: 5934717702480703820, guid: 7de5251a433a0fa4fb9be38ef211bdb1, type: 3}
+  - {fileID: 5934717702480703820, guid: 98ef68e97e3e0594688efc109331e6db, type: 3}
+  - {fileID: 5934717702480703820, guid: f49e521b2e332344ca9d13d09106a04c, type: 3}
+  - {fileID: 5934717702480703820, guid: 8d33b5d58151b914e84cda03de668914, type: 3}
+  - {fileID: 6292886969032856733, guid: dc10de3831a7b1c438ee08a6b4a39ad8, type: 3}
   - {fileID: 6741628547934909847, guid: 6ece49e30049c9e42b58cd6e168f537f, type: 3}
   - {fileID: 5934717702480703820, guid: 38ce4b0ce65c1f14bb5c840a22c3ba83, type: 3}
-  - {fileID: 5994704645413059349, guid: 18299d95cb53b1743be4d9654b2d9a4a, type: 3}
-  - {fileID: 5934717702480703820, guid: 7de5251a433a0fa4fb9be38ef211bdb1, type: 3}
-  startPos: 0.75
-  offset: 2.5
+  SpawnStartPos: 0
 --- !u!1 &480024246
 GameObject:
   m_ObjectHideFlags: 0
