@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MainPieceGen : MonoBehaviour
@@ -11,25 +12,33 @@ public class MainPieceGen : MonoBehaviour
     [SerializeField]
     int SpawnStartPos;
 
+    [SerializeField]
+    Vector2 checkCenter;
+
+    public List<GameObject> dragBlock = new List<GameObject>(3);
+
     void Start()
     {
-        for (int i = 0; i < 3; i++)
-        {
-            float k = startPos + (i * offset);
-            var Piece = Instantiate(Pieces[Random.Range(SpawnStartPos, Pieces.Length)], new Vector2(k, 0), Quaternion.identity);
-            Piece.transform.SetParent(transform, false);
-        }
+        GenratePiece();
     }
 
-    private void Update()
-    {
-        var mainPieace = GameObject.FindGameObjectsWithTag("MainPiece");
 
-        for (int i = 0; i < 3 - mainPieace.Length; i++)
+
+    public void DeleteData(GameObject piece)
+    {
+        dragBlock.Remove(piece);
+        if(dragBlock.Count == 0) GenratePiece();
+    }
+
+    void GenratePiece()
+    {
+        for (int i = dragBlock.Count; i < 3; i++)
         {
             float k = startPos + (i * offset);
-            var Piece = Instantiate(Pieces[Random.Range(SpawnStartPos, Pieces.Length)], new Vector2(k, 0), Quaternion.identity);
+            GameObject Piece = Instantiate(Pieces[Random.Range(SpawnStartPos, Pieces.Length)], new Vector2(k, 0), Quaternion.identity);
             Piece.transform.SetParent(transform, false);
+            dragBlock.Add(Piece);
+
         }
     }
 }

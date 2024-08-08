@@ -1,6 +1,7 @@
 
 using System;
 using UnityEngine;
+using static Unity.Collections.AllocatorManager;
 
 public class GridGenerate : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class GridGenerate : MonoBehaviour
     Color highlight;
 
     public Sprite DefaultImage;
+
+    [SerializeField]
+    MainPieceGen GenrateBlock;
 
     void Start()
     {
@@ -118,8 +122,9 @@ public class GridGenerate : MonoBehaviour
                 block.transform.localScale = Vector3.one;
                 fillBlock[piecePos.x, piecePos.y] = block;
             }
-
+            
             mainPiece.GetComponent<BoxCollider2D>().enabled = false;
+            GenrateBlock.DeleteData(mainPiece.gameObject);
         }
         else
         {
