@@ -23,7 +23,7 @@ public class GridGenerate : MonoBehaviour
     void Start()
     {
         baseBlock = new GameObject[size, size];
-        fillBlock= new GameObject[size, size];
+        fillBlock = new GameObject[size, size];
 
         for (int i = 0; i < size; i++)
         {
@@ -31,6 +31,7 @@ public class GridGenerate : MonoBehaviour
             {
                 var block = Instantiate(SpawnImage, new Vector2(i, j), Quaternion.identity);
                 block.transform.SetParent(transform, false);
+                block.name = i + "" + j;
                 baseBlock[i, j] = block;
             }
         }
@@ -57,7 +58,7 @@ public class GridGenerate : MonoBehaviour
 
             block.GetComponent<SpriteRenderer>().sprite = piece.GetComponent<SpriteRenderer>().sprite;
             block.transform.localScale = Vector3.one;
-            
+
         }
 
     }
@@ -120,15 +121,42 @@ public class GridGenerate : MonoBehaviour
 
                 piece.transform.position = new Vector2(piecePos.x, piecePos.y);
                 block.transform.localScale = Vector3.one;
-                fillBlock[piecePos.x, piecePos.y] = block;
+                fillBlock[piecePos.x, piecePos.y] = piece;
             }
-            
+
             mainPiece.GetComponent<BoxCollider2D>().enabled = false;
             GenrateBlock.DeleteData(mainPiece.gameObject);
+            DestroyBlocks();
+
         }
         else
         {
             mainPiece.MoveToOriginalPos();
+        }
+    }
+
+    void DestroyBlocks()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            bool isDestory = true;
+            for (int j = 0; j < size; j++)
+            {
+                if (fillBlock[i, j] == null)
+                {
+                    isDestory = false;
+                }
+            }
+            print(i + "---->" + isDestory);
+            if (isDestory)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    //fillBlock[i, j].gameObject.transform.parent = null;
+                    Destroy(fillBlock[i, j].gameObject);
+                    fillBlock[i, j] = null;
+                }
+            }
         }
     }
 }

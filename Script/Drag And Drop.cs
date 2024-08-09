@@ -36,7 +36,7 @@ public class Drag_And_Drop : MonoBehaviour
                 }
                 else
                 {
-                    grid.clearHighlight();
+                    grid.clearHighlight();                   
                 }
 
             }
