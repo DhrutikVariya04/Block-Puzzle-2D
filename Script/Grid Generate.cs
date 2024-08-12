@@ -1,7 +1,5 @@
-
-using System;
+using System.Collections;
 using UnityEngine;
-using static Unity.Collections.AllocatorManager;
 
 public class GridGenerate : MonoBehaviour
 {
@@ -19,6 +17,9 @@ public class GridGenerate : MonoBehaviour
 
     [SerializeField]
     MainPieceGen GenrateBlock;
+
+    [SerializeField]
+    ParticleSystem Particle;
 
     void Start()
     {
@@ -41,6 +42,7 @@ public class GridGenerate : MonoBehaviour
     public void Highlight(Piece_Script mainPiece)
     {
         clearHighlight();
+        Particle.Play();
 
         if (!isEmptyBase(mainPiece))
         {
@@ -147,16 +149,26 @@ public class GridGenerate : MonoBehaviour
                     isDestory = false;
                 }
             }
-            print(i + "---->" + isDestory);
+
+            //print(i + "---->" + isDestory);
+
             if (isDestory)
             {
                 for (int j = 0; j < size; j++)
                 {
-                    //fillBlock[i, j].gameObject.transform.parent = null;
+                    fillBlock[i, j].gameObject.transform.parent = null;
                     Destroy(fillBlock[i, j].gameObject);
+                    //StartCoroutine(particale());
                     fillBlock[i, j] = null;
                 }
             }
         }
+    }
+
+    IEnumerator particale()
+    {
+        Particle.Play();
+        print("Hello");
+        yield return new WaitForSeconds(3);
     }
 }
