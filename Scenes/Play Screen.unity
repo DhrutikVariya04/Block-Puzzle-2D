@@ -674,7 +674,6 @@ MonoBehaviour:
   highlight: {r: 0.81960785, g: 1, b: 0.7607843, a: 1}
   DefaultImage: {fileID: 1566078124, guid: 5a320b3e6655fa048bb3b6c83120a783, type: 3}
   GenrateBlock: {fileID: 272812692}
-  Particle: {fileID: 322823688639281821, guid: 8534fa02e6d2fcd43af1f5001c9014cc, type: 3}
 --- !u!1 &1007072069
 GameObject:
   m_ObjectHideFlags: 0

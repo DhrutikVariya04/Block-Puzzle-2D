@@ -18,9 +18,6 @@ public class GridGenerate : MonoBehaviour
     [SerializeField]
     MainPieceGen GenrateBlock;
 
-    [SerializeField]
-    ParticleSystem Particle;
-
     void Start()
     {
         baseBlock = new GameObject[size, size];
@@ -42,7 +39,6 @@ public class GridGenerate : MonoBehaviour
     public void Highlight(Piece_Script mainPiece)
     {
         clearHighlight();
-        Particle.Play();
 
         if (!isEmptyBase(mainPiece))
         {
@@ -141,34 +137,55 @@ public class GridGenerate : MonoBehaviour
     {
         for (int i = 0; i < size; i++)
         {
-            bool isDestory = true;
+            bool isDestoryV = true;
+            bool isDestoryH = true;
+
             for (int j = 0; j < size; j++)
             {
                 if (fillBlock[i, j] == null)
                 {
-                    isDestory = false;
+                    isDestoryV = false;
+                }
+
+                if (fillBlock[j, i] == null)
+                {
+                    isDestoryH = false;
                 }
             }
 
-            //print(i + "---->" + isDestory);
+            //print(i + "---->" + isDestoryV);
 
-            if (isDestory)
+            if (isDestoryV)
             {
                 for (int j = 0; j < size; j++)
                 {
                     fillBlock[i, j].gameObject.transform.parent = null;
-                    Destroy(fillBlock[i, j].gameObject);
-                    //StartCoroutine(particale());
+                    StartCoroutine(particale(fillBlock[i,j]));
                     fillBlock[i, j] = null;
+                }
+            }
+
+            if (isDestoryH)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    fillBlock[j, i].gameObject.transform.parent = null;
+                    StartCoroutine(particale(fillBlock[j, i]));
+                    fillBlock[j, i] = null;
                 }
             }
         }
     }
 
-    IEnumerator particale()
+    IEnumerator particale(GameObject piece)
     {
+        ParticleSystem Particle = piece.GetComponent<ParticleSystem>();
         Particle.Play();
-        print("Hello");
-        yield return new WaitForSeconds(3);
+
+        yield return new WaitForSeconds(.75f);
+
+        Particle.Stop();
+
+        Destroy(piece);
     }
 }
