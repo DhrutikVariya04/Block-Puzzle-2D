@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class GridGenerate : MonoBehaviour
 {
@@ -110,7 +111,7 @@ public class GridGenerate : MonoBehaviour
         {
             var Totalchild = mainPiece.transform.childCount;
 
-            for (int i = 0; i < Totalchild; i++)
+            for (int i = Totalchild - 1; i >= 0; i--)
             {
                 var piece = mainPiece.transform.GetChild(i).gameObject;
                 Vector2Int piecePos = converToVector2Int(piece.transform.position);
@@ -120,11 +121,14 @@ public class GridGenerate : MonoBehaviour
                 piece.transform.position = new Vector2(piecePos.x, piecePos.y);
                 block.transform.localScale = Vector3.one;
                 fillBlock[piecePos.x, piecePos.y] = piece;
+                piece.transform.SetParent(null);
             }
+
 
             mainPiece.GetComponent<BoxCollider2D>().enabled = false;
             GenrateBlock.DeleteData(mainPiece.gameObject);
             DestroyBlocks();
+            Destroy(mainPiece.gameObject);
 
         }
         else
@@ -135,6 +139,7 @@ public class GridGenerate : MonoBehaviour
 
     void DestroyBlocks()
     {
+
         for (int i = 0; i < size; i++)
         {
             bool isDestoryV = true;
@@ -160,8 +165,9 @@ public class GridGenerate : MonoBehaviour
                 for (int j = 0; j < size; j++)
                 {
                     fillBlock[i, j].gameObject.transform.parent = null;
-                    StartCoroutine(particale(fillBlock[i,j]));
+                    StartCoroutine(particale(fillBlock[i, j]));
                     fillBlock[i, j] = null;
+                    //Destroy(Parent);
                 }
             }
 
@@ -172,6 +178,7 @@ public class GridGenerate : MonoBehaviour
                     fillBlock[j, i].gameObject.transform.parent = null;
                     StartCoroutine(particale(fillBlock[j, i]));
                     fillBlock[j, i] = null;
+                    //Destroy(Parent);                    
                 }
             }
         }
@@ -180,9 +187,11 @@ public class GridGenerate : MonoBehaviour
     IEnumerator particale(GameObject piece)
     {
         ParticleSystem Particle = piece.GetComponent<ParticleSystem>();
+
         Particle.Play();
 
-        yield return new WaitForSeconds(.75f);
+        piece.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(1f);
 
         Particle.Stop();
 
