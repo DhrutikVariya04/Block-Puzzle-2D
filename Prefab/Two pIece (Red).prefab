@@ -107,7 +107,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c5cd161cd58d114793b4745f65da649, type: 2}
+  - {fileID: 2100000, guid: f1ec06dc709740743bea4e7516c9b95d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4893,8 +4893,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2092869120941880732}
   - component: {fileID: 3180626395013163717}
-  - component: {fileID: 467253341814957810}
-  - component: {fileID: 1955203239490825162}
+  - component: {fileID: 8966804320624722586}
+  - component: {fileID: 7643859693510516123}
   m_Layer: 0
   m_Name: Two pIece (Red)
   m_TagString: Untagged
@@ -4937,7 +4937,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f1ec06dc709740743bea4e7516c9b95d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4969,7 +4969,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!199 &467253341814957810
+--- !u!199 &8966804320624722586
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -4990,7 +4990,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c5cd161cd58d114793b4745f65da649, type: 2}
+  - {fileID: 2100000, guid: f1ec06dc709740743bea4e7516c9b95d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5043,7 +5043,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!198 &1955203239490825162
+--- !u!198 &7643859693510516123
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

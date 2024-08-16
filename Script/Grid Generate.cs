@@ -1,6 +1,5 @@
-using System.Collections;
 using UnityEngine;
-using static UnityEngine.ParticleSystem;
+using System.Collections;
 
 public class GridGenerate : MonoBehaviour
 {
