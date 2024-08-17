@@ -1,4 +1,6 @@
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Drag_And_Drop : MonoBehaviour
 {
@@ -54,4 +56,11 @@ public class Drag_And_Drop : MonoBehaviour
         }
     }
 
+
+    public void Setting()
+    {
+        // For Click Sound  :-
+        AudioManager.Audio.ClickSound();
+        SceneManager.LoadScene("Home");
+    }
 }

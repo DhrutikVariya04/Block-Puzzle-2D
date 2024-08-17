@@ -400,6 +400,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: common_ui_12
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 809
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fcf905fcb734d54f9f1834ef86f778c
+      internalID: 1229294949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_ui_13
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 812
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f440649625916454280d7ed3742261a4
+      internalID: 132967380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -415,6 +457,8 @@ TextureImporter:
       common_ui_1: 2020733592
       common_ui_10: -885096456
       common_ui_11: 972945234
+      common_ui_12: 1229294949
+      common_ui_13: 132967380
       common_ui_2: 1034942936
       common_ui_3: 159533231
       common_ui_4: 1310043275

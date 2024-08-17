@@ -157,7 +157,7 @@ TextureImporter:
         width: 247
         height: 235
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,6 +165,153 @@ TextureImporter:
       bones: []
       spriteID: c2628ea1f7f47764190a707392a66168
       internalID: 1075805399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home_ui_1
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 392
+        width: 362
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915591fd7692d3441be6f26efb2fad53
+      internalID: -525318096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home_ui_2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 244
+        width: 497
+        height: 415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c1d5c478f96b348b7c411845cc7281
+      internalID: 1009966740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home_ui_3
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 414
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdd73e229c1b82344988ed799a37d727
+      internalID: -1789260520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home_ui_4
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 493
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73035b4af1856e94db1e4a683d106ee6
+      internalID: -1187523082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home_ui_5
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 328
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ab7ddc82c95f7f4cb6564c8f421c719
+      internalID: 70844225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home_ui_6
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 169
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a304e56c6eacae8419270d8b1b32bf4b
+      internalID: -122611552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home_ui_7
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 311
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26da642b4aa53fc409991872f16534c5
+      internalID: 641270081
       vertices: []
       indices: 
       edges: []
@@ -181,6 +328,13 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       home_ui_0: 1075805399
+      home_ui_1: -525318096
+      home_ui_2: 1009966740
+      home_ui_3: -1789260520
+      home_ui_4: -1187523082
+      home_ui_5: 70844225
+      home_ui_6: -122611552
+      home_ui_7: 641270081
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
