@@ -1,4 +1,4 @@
-using UnityEditor.SearchService;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -56,11 +56,16 @@ public class Drag_And_Drop : MonoBehaviour
         }
     }
 
-
+    [System.Obsolete]
     public void Setting()
     {
         // For Click Sound  :-
         AudioManager.Audio.ClickSound();
-        SceneManager.LoadScene("Home");
+
+        SceneManager.UnloadScene("Play Screen");
+
+        // This Method For Start Camera And EventListner :-
+        Home.home.ActiveListner();
+     
     }
 }
