@@ -48,6 +48,7 @@ public class Drag_And_Drop : MonoBehaviour
         {
             if (pickedObject != null)
             {
+                AudioManager.Audio.BlockPlaceSound();
                 grid.Placeblock(pickedObject);
             }
 

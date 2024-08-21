@@ -409,7 +409,7 @@ TextureImporter:
         width: 69
         height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -430,7 +430,7 @@ TextureImporter:
         width: 40
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -438,6 +438,69 @@ TextureImporter:
       bones: []
       spriteID: f440649625916454280d7ed3742261a4
       internalID: 132967380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_ui_14
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 802
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e4f7f5d0d61cb8479211c0fda199c43
+      internalID: -1165143921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_ui_15
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 786
+        width: 60
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8584f8321f624c44bc3c32e5169a4ee
+      internalID: 138656757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_ui_16
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 737
+        width: 59
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae8a9630bd5ebb4d9ac3eb805c7747c
+      internalID: -857058788
       vertices: []
       indices: 
       edges: []
@@ -459,6 +522,9 @@ TextureImporter:
       common_ui_11: 972945234
       common_ui_12: 1229294949
       common_ui_13: 132967380
+      common_ui_14: -1165143921
+      common_ui_15: 138656757
+      common_ui_16: -857058788
       common_ui_2: 1034942936
       common_ui_3: 159533231
       common_ui_4: 1310043275

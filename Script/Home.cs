@@ -6,17 +6,13 @@ public class Home : MonoBehaviour
 {
     [SerializeField] GameObject Camera;
     [SerializeField] GameObject EventSystem;
+    [SerializeField] GameObject Menu;
 
     public static Home home;
 
     private void Awake()
     {
         home = this;
-    }
-
-    void Update()
-    {
-        
     }
 
     // When Player Click On classic Button :--
@@ -30,7 +26,7 @@ public class Home : MonoBehaviour
     {
         SceneManager.LoadScene("Play Screen", LoadSceneMode.Additive);
 
-        yield return new WaitForSeconds(.25f);
+        yield return new WaitForSeconds(.005f);
 
         // Disable Camera And EventSystem :-
         DisActiveListner();
@@ -46,5 +42,10 @@ public class Home : MonoBehaviour
     {
         Camera.SetActive(false);
         EventSystem.SetActive(false);
+    }
+
+    public void menu()
+    {
+        Menu.SetActive(true);
     }
 }
