@@ -1,11 +1,11 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Drag_And_Drop : MonoBehaviour
+public class InputManager : MonoBehaviour
 {
     Piece_Script pickedObject = null;
     public GridGenerate grid;
+    [SerializeField] GameObject Menu;
 
     private void Update()
     {
@@ -47,8 +47,7 @@ public class Drag_And_Drop : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             if (pickedObject != null)
-            {
-                AudioManager.Audio.BlockPlaceSound();
+            {               
                 grid.Placeblock(pickedObject);
             }
 
@@ -56,17 +55,23 @@ public class Drag_And_Drop : MonoBehaviour
             grid.clearHighlight();
         }
     }
-
-    [System.Obsolete]
+   
     public void Setting()
     {
         // For Click Sound  :-
         AudioManager.Audio.ClickSound();
 
-        SceneManager.UnloadScene("Play Screen");
+        Menu.SetActive(true);
+    }
+
+    public void clickHome()
+    {
+        // For Click Sound  :-
+        AudioManager.Audio.ClickSound();
+
+        SceneManager.UnloadSceneAsync("Play Screen");
 
         // This Method For Start Camera And EventListner :-
         Home.home.ActiveListner();
-     
     }
 }

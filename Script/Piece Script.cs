@@ -1,8 +1,9 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class Piece_Script : MonoBehaviour
 {
-    Vector2 startPosition;
+    Vector3 startPosition;
 
     internal void placeBlock(Vector2 Pos)
     {
@@ -16,7 +17,8 @@ public class Piece_Script : MonoBehaviour
 
     internal void MoveToOriginalPos()
     {
-        transform.position = startPosition;
+        transform.DOMove(startPosition,.25f);
+        //transform.position = startPosition;
     }
 
     private void Start()

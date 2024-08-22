@@ -1263,7 +1263,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!1 &498976997
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,7 +2004,7 @@ Canvas:
   m_GameObject: {fileID: 903226716}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1012476012}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -4456,6 +4456,8 @@ MonoBehaviour:
   BG: {fileID: 2766893689216109404}
   Clickclip: {fileID: 8300000, guid: 4651787d07eff0c4d9bc3e25d5592cf7, type: 3}
   BlockPlaceclip: {fileID: 8300000, guid: ddb5587231ec7204085dd38d4b72af9f, type: 3}
+  BloclkWrongPlaceclip: {fileID: 8300000, guid: 1f2aac6ccd0d0384c82b548e1bacd873, type: 3}
+  BlockExplodeclip: {fileID: 8300000, guid: d3545449dea5e474d96368045d16bfb8, type: 3}
 --- !u!4 &2183704209701919002
 Transform:
   m_ObjectHideFlags: 0

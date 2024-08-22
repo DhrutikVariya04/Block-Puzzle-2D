@@ -3,8 +3,9 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioSource PlaySound,BG;
-    [SerializeField] AudioClip Clickclip,BlockPlaceclip;
-    
+    [SerializeField] AudioClip Clickclip, BlockPlaceclip;
+    [SerializeField] AudioClip BloclkWrongPlaceclip, BlockExplodeclip;
+
     public static AudioManager Audio;
 
     private void Awake()
@@ -12,27 +13,37 @@ public class AudioManager : MonoBehaviour
         Audio = this;
     }
 
-    public void ClickSound()
+    internal void ClickSound()
     {
         PlaySound.clip = Clickclip;
         PlaySound.Play();
     }
 
-    public void BlockPlaceSound()
+    internal void BlockPlaceSound()
     {
         PlaySound.clip = BlockPlaceclip;
         PlaySound.Play();
     }
 
-    public void BGMusic()
+    internal void BlockWrongPlaceSound()
     {
-        if(BG.mute == true)
-        {
-            BG.mute = false;
-        }
-        else
-        {
-            BG.mute = true;
-        }
+        PlaySound.clip = BloclkWrongPlaceclip;
+        PlaySound.Play();
+    }
+
+    internal void blockExplode()
+    {
+        PlaySound.clip = BlockExplodeclip;
+        PlaySound.Play();
+    }
+
+    public void BGMusic(bool Value)
+    {
+        BG.mute = !Value;
+    }
+
+    public bool isBgMusicOn()
+    {
+        return !BG.mute;
     }
 }

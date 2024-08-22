@@ -22,8 +22,6 @@ public class MainPieceGen : MonoBehaviour
         GenratePiece();
     }
 
-
-
     public void DeleteData(GameObject piece)
     {
         dragBlock.Remove(piece);

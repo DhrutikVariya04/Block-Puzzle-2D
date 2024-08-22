@@ -46,6 +46,7 @@ public class Home : MonoBehaviour
 
     public void menu()
     {
+        AudioManager.Audio.ClickSound();
         Menu.SetActive(true);
     }
 }

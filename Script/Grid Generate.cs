@@ -108,6 +108,7 @@ public class GridGenerate : MonoBehaviour
         Vector2 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (isEmptyBase(mainPiece))
         {
+            AudioManager.Audio.BlockPlaceSound(); // For Play Block Place Sound : -
             var Totalchild = mainPiece.transform.childCount;
 
             for (int i = Totalchild - 1; i >= 0; i--)
@@ -132,6 +133,7 @@ public class GridGenerate : MonoBehaviour
         }
         else
         {
+            AudioManager.Audio.BlockWrongPlaceSound(); // For Play Wrong Block Sound : -
             mainPiece.MoveToOriginalPos();
         }
     }
@@ -166,7 +168,6 @@ public class GridGenerate : MonoBehaviour
                     fillBlock[i, j].gameObject.transform.parent = null;
                     StartCoroutine(particale(fillBlock[i, j]));
                     fillBlock[i, j] = null;
-                    //Destroy(Parent);
                 }
             }
 
@@ -176,8 +177,7 @@ public class GridGenerate : MonoBehaviour
                 {
                     fillBlock[j, i].gameObject.transform.parent = null;
                     StartCoroutine(particale(fillBlock[j, i]));
-                    fillBlock[j, i] = null;
-                    //Destroy(Parent);                    
+                    fillBlock[j, i] = null;               
                 }
             }
         }
@@ -188,6 +188,7 @@ public class GridGenerate : MonoBehaviour
         ParticleSystem Particle = piece.GetComponent<ParticleSystem>();
 
         Particle.Play();
+        AudioManager.Audio.blockExplode(); // For Play Explode Sound : -
 
         piece.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(1f);
