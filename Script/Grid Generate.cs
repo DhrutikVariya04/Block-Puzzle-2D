@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class GridGenerate : MonoBehaviour
 {
@@ -134,6 +135,8 @@ public class GridGenerate : MonoBehaviour
         else
         {
             AudioManager.Audio.BlockWrongPlaceSound(); // For Play Wrong Block Sound : -
+            mainPiece.transform.localScale = new Vector3(.80f,.80f,.80f);
+            mainPiece.transform.DOScale(new Vector3(.80f, .80f, .80f), .25f);
             mainPiece.MoveToOriginalPos();
         }
     }

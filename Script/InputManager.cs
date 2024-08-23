@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,6 +22,7 @@ public class InputManager : MonoBehaviour
                 if (Hit.transform.tag == "MainPiece")
                 {
                     pickedObject = Hit.transform.gameObject.GetComponent<Piece_Script>();
+                    pickedObject.transform.DOScale(new Vector3(1f, 1f, 1f), .25f);
                 }
             }
         }
@@ -48,7 +50,7 @@ public class InputManager : MonoBehaviour
         {
             if (pickedObject != null)
             {               
-                grid.Placeblock(pickedObject);
+                grid.Placeblock(pickedObject);              
             }
 
             pickedObject = null;

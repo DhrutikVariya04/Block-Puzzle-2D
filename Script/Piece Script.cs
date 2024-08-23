@@ -18,7 +18,6 @@ public class Piece_Script : MonoBehaviour
     internal void MoveToOriginalPos()
     {
         transform.DOMove(startPosition,.25f);
-        //transform.position = startPosition;
     }
 
     private void Start()

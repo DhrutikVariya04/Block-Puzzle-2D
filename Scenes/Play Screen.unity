@@ -428,7 +428,7 @@ MonoBehaviour:
   - {fileID: 6292886969032856733, guid: dc10de3831a7b1c438ee08a6b4a39ad8, type: 3}
   - {fileID: 6741628547934909847, guid: 6ece49e30049c9e42b58cd6e168f537f, type: 3}
   - {fileID: 5934717702480703820, guid: 38ce4b0ce65c1f14bb5c840a22c3ba83, type: 3}
-  SpawnStartPos: 15
+  SpawnStartPos: 1
   checkCenter: {x: 3.75, y: -3.75}
   dragBlock: []
 --- !u!1 &449409036
