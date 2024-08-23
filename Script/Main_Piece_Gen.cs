@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class MainPieceGen : MonoBehaviour
 {
-    float startPos = .75f;
-    float offset = 2.5f;
+    [SerializeField] float startPos = .75f;
+    [SerializeField] float offset = 2.5f;
 
     [SerializeField]
     GameObject[] Pieces;
@@ -12,20 +12,17 @@ public class MainPieceGen : MonoBehaviour
     [SerializeField]
     int SpawnStartPos;
 
-    [SerializeField]
-    Vector2 checkCenter;
-
-    public List<GameObject> dragBlock = new List<GameObject>(3);
+    public List<Piece_Script> dragBlock = new List<Piece_Script>(3);
 
     void Start()
     {
         GenratePiece();
     }
 
-    public void DeleteData(GameObject piece)
+    public void DeleteData(Piece_Script piece)
     {
         dragBlock.Remove(piece);
-        if(dragBlock.Count == 0) GenratePiece();
+        if (dragBlock.Count == 0) GenratePiece();
     }
 
     void GenratePiece()
@@ -35,7 +32,7 @@ public class MainPieceGen : MonoBehaviour
             float k = startPos + (i * offset);
             GameObject Piece = Instantiate(Pieces[Random.Range(SpawnStartPos, Pieces.Length)], new Vector2(k, 0), Quaternion.identity);
             Piece.transform.SetParent(transform, false);
-            dragBlock.Add(Piece);
+            dragBlock.Add(Piece.GetComponent<Piece_Script>());
 
         }
     }

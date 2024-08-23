@@ -127,18 +127,61 @@ public class GridGenerate : MonoBehaviour
 
 
             mainPiece.GetComponent<BoxCollider2D>().enabled = false;
-            GenrateBlock.DeleteData(mainPiece.gameObject);
+            GenrateBlock.DeleteData(mainPiece);
             DestroyBlocks();
             Destroy(mainPiece.gameObject);
+            checkGameOver()
+                ;
 
         }
         else
         {
             AudioManager.Audio.BlockWrongPlaceSound(); // For Play Wrong Block Sound : -
-            mainPiece.transform.localScale = new Vector3(.80f,.80f,.80f);
             mainPiece.transform.DOScale(new Vector3(.80f, .80f, .80f), .25f);
             mainPiece.MoveToOriginalPos();
         }
+    }
+
+    void checkGameOver()
+    {
+        for (int r = 0; r < size; r++)
+        {
+            for (int c = 0; c < size; c++)
+            {
+
+                if (fillBlock[r, c] != null) continue;
+
+                var basePiece = baseBlock[r, c];
+                for (int i = 0; i < GenrateBlock.dragBlock.Count; i++)
+                {
+                    var dragPiece = GenrateBlock.dragBlock[i];
+                    var tempP = dragPiece.transform.position;
+                    var tempS = dragPiece.transform.localScale;
+
+                    dragPiece.transform.localScale = Vector3.one;
+                    dragPiece.transform.position = basePiece.transform.position;
+
+                    if (isEmptyBase(dragPiece))
+                    {
+                        dragPiece.transform.position = tempP;
+                        dragPiece.transform.localScale = tempS;
+                        return;
+                    }
+
+                    /*for (int j = 0; j < dragPiece.transform.childCount; j++)
+                    {
+                        var child = dragPiece.transform.GetChild(j);
+                        print($"{j} --> {child.transform.position}");
+                    }*/
+
+                    dragPiece.transform.position = tempP;
+                    dragPiece.transform.localScale = tempS;
+                }
+            }
+        }
+
+        print("Game Over!!!");
+
     }
 
     void DestroyBlocks()
@@ -180,7 +223,7 @@ public class GridGenerate : MonoBehaviour
                 {
                     fillBlock[j, i].gameObject.transform.parent = null;
                     StartCoroutine(particale(fillBlock[j, i]));
-                    fillBlock[j, i] = null;               
+                    fillBlock[j, i] = null;
                 }
             }
         }
